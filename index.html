@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+
+    <meta charset="utf-8">
+   
+    <style>
+        body {
+    background-color: #EFC3CA; 
+  }
+      #title {
+        font-size: 100px; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        border-right: 2px solid black; 
+        color:black;
+        
+      }
+    
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 200px; } 
+      }
+
+      form[name="theSpreadsheet"] {
+    background-color: #E7DDFF;
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px; 
+    margin: auto auto; 
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+ 
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+ 
+  textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid#FFD3DA;
+    resize: vertical;
+    background-color: #FFD3DA;
+    
+  }
+  p {
+    margin-bottom: 10px;
+    font-size: 20px; 
+    color: #340E3F; 
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    
+  }
+
+  select {
+    width: 100%;
+    padding: 12px; 
+    border-radius: 8px; 
+    border: 2px solid #ccc; 
+    font-size: 18px; 
+  }
+  input[type="text"] {
+    padding: 15px; 
+    border-radius: 10px; 
+    border: 2px solid #ccc; 
+    font-size: 25px; 
+    text-align: center; 
+    color: #333; 
+    width: 100%; 
+  }
+  .btn {
+    padding: 10px 20px; 
+    border-radius: 5px;
+    border: none; 
+    cursor: pointer; 
+    font-size: 25px;
+    text-align: center; 
+    color: #fff; 
+  }
+  .btn-primary {
+    background-color: #73238A; 
+  }
+
+  .btn-example {
+    background-color: #73238A; 
+  }
+  .btn-erase {
+    background-color: #73238A; 
+  }
+
+  .btn-spacing {
+    margin-right: 80px; 
+  }
+  .decorated {
+    font-weight: bold; 
+    color: #73238A; 
+    font-size: 30px; 
+  }
+
+  .inline {
+    display: flex; 
+    align-items: center;
+  }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <script type="text/javascript" src="simplex.js"></script>
+
+
+
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+<br><br>
+
+<center>
+<form name="theSpreadsheet">
+<h1 id="title">- Simplex Solver -</h1>
+
+
+<table  class="table-striped active">
+
+<tr>
+
+  <div class="container">
+    <td >
+      <p>L'algorithme du simplexe est une méthode couramment utilisée pour résoudre les problèmes de programmation linéaire. Il s'agit d'une procédure itérative qui part d'une solution faisable initiale et se déplace systématiquement d'une solution faisable à une autre, améliorant la valeur de la fonction objectif à chaque étape jusqu'à ce qu'une solution optimale soit atteinte.</p>
+        <p>Voici un bref aperçu de son fonctionnement :</p>
+        <ol>
+          <li><strong>Initialisation :</strong> Commencez par une solution faisable initiale. Cela pourrait être n'importe quelle solution faisable, comme l'origine (0,0) si toutes les variables sont non négatives.</li>
+          <li><strong>Identification du pivot :</strong> Sélectionnez un élément pivot dans la solution actuelle. L'élément pivot est choisi en fonction du coefficient le plus négatif dans la ligne de la fonction objectif (si on maximise) ou le coefficient le plus positif (si on minimise).</li>
+          <li><strong>Opération pivot :</strong> Effectuez des opérations pivot pour mettre à jour la solution. Cela implique de sélectionner une ligne pivot et une colonne pivot, et d'utiliser l'élimination de Gauss pour transformer l'élément pivot en 1 et rendre tous les autres éléments de la colonne pivot à zéro.</li>
+          <li><strong>Test d'optimalité :</strong> Vérifiez si la solution actuelle est optimale. Si tous les coefficients dans la ligne de la fonction objectif sont non négatifs (pour la maximisation) ou non positifs (pour la minimisation), alors la solution est optimale. Sinon, répétez les étapes 2 à 4.</li>
+          <li><strong>Itération :</strong> Si la solution n'est pas optimale, revenez à l'étape 2 et continuez à itérer jusqu'à ce qu'une solution optimale soit trouvée.</li>
+        </ol>
+        <p>Le problème de programmation linéaire que vous devez saisir ci-dessous comprendrait généralement :</p>
+        <ul>
+          <li><strong>Fonction Objectif :</strong> C'est la fonction que vous voulez maximiser ou minimiser.</li>
+          <li><strong>Contraintes :</strong> Ce sont les conditions qui doivent être satisfaites par les variables de décision.</li>
+          <li><strong>Variables de Décision :</strong> Ce sont les variables que vous pouvez ajuster pour optimiser la fonction objectif.</li>
+        </ul>
+        <p>Une fois que vous fournirez le problème de programmation linéaire, l'algorithme du simplexe pourra être appliqué pour trouver la solution optimale. Si vous souhaitez un exemple pour voir comment configurer un problème de programmation linéaire, vous pouvez appuyer sur le bouton "Exemple".</p>
+      </div>
+      <br>
+      <textarea class="form-control input-sm" name="input" rows="5" cols="20"></textarea>
+    </td>
+  </div>
+
+</tr>
+<table>
+  <tr>
+    <td>
+      <div class="container inline">
+        <span class="decorated">Mode:</span>
+        <select name="Mode" size="3">
+          <option selected>Decimal</option>
+          <option>Fraction</option>
+          <option>Integer</option>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div class="container inline">
+        <span class="decorated">Rounding (significant digits):</span>
+        <input type="text" size="2" value="6" name="acc">
+      </div>
+    </td>
+  </tr>
+</table>
+
+<br>
+<input type="button" class="btn btn-primary btn-spacing" value="Solve" onClick="doIt(2); doIt(1)">
+<input type="button" class="btn btn-example btn-spacing" value="Example" onClick="doIt(5)">
+<input type="button" class="btn btn-erase btn-spacing" value="Erase Everything" onClick="doIt(3)">
+<br>
+
+
+<div class="container">
+  <br><br>
+  <span class="decorated">Solution : </span><br><br>
+  <b><input type="text" size="80" disabled name="expr" value="Optimal solution will appear here."></b>
+</div>
+<tr>
+  <br><br>
+<td >
+  <span class="decorated">Les tableaux sont ci-dessous</span><br><br>
+
+<br><br>
+<textarea style="min-width: 100%" name = "output" rows = 30 cols = 80>
+
+</textarea>
+
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+</center>
+
+
+  </body>
+
+</html>
